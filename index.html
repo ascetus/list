@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="date=no,telephone=no">
+    <title>Keep in touch with GLO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <style>
+      .main {
+        margin: auto;
+        max-width: 500px;
+        margin-top: 1rem;
+      }
+      @media only screen and (max-width: 700px) {
+        .main {
+          max-width: 100%;
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main card">
+        <div class="card-image">
+          <figure class="image">
+            <img src="header.png" alt="header image">
+          </figure>
+        </div>
+        <div class="card-header">
+          <p class="card-header-title">Keep in touch with GayLubeOil</p>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <form method="POST" action="https://api.glophilosophy.org/data">
+              <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="What should I call you?" name="name">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                  <input class="input" type="email" placeholder="Where can I reach you?" name="email">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">About</label>
+                <div class="control">
+                  <textarea class="textarea" rows="2" placeholder="What do you want me to know about you?" name="info"></textarea>
+                </div>
+              </div>
+              <input type="hidden" id="meta" name="meta" value="">
+              <div class="field">
+                <div class="g-recaptcha" 
+                   data-sitekey="6LcgC64ZAAAAAKaERZLrCzZJSi6IrrINL5Dk_baA"></div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <button class="button is-link">Signup</button>
+                </div>
+              </div>
+            </form> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      fetch("https://www.cloudflare.com/cdn-cgi/trace")
+        .then(res => res.text())
+        .then(res => {
+          document.getElementById("meta").value = res
+        })
+    </script>
+  </body>
+</html>
